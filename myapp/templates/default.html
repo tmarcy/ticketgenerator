@@ -1,0 +1,21 @@
+<HTML>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    {% block head %}
+        <title>{% block title %}{% endblock %}-Mywebpage</title>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    {% endblock %}
+</head>
+<body>
+    <link rel="stylesheet" href="static/style.css">
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</HTML>

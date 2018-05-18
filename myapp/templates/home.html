@@ -1,0 +1,17 @@
+{% extends "default.html" %}
+
+{% block title %}homepage{% endblock %}
+
+{% block content %}
+    <h1>Welcome to TicketGenerator</h1>
+    <h2>Choose one of the following link:</h2>
+
+    {% if handlers %}
+    <ul>
+        {% for h in handlers %}
+        <li><a href={{h[1]}}>{{h[0]}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+{% endblock %}
